@@ -14,13 +14,15 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
+        android:hint="@string/quilometragem_atual"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="quilometragem atual"
+        android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/quantidade_abastecida"
@@ -30,13 +32,15 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
+        android:hint="@string/quantidade_abastecida"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="quantidade abastecida"
+        android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quilometragem" />
+        app:layout_constraintTop_toBottomOf="@+id/quilometragem"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/dia"
@@ -48,11 +52,13 @@
         android:ems="10"
         android:inputType="date"
         android:minHeight="48dp"
+        android:hint="@string/data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quantidade_abastecida"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/valor"
@@ -64,13 +70,15 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="valor"
+        android:hint="@string/valor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dia" />
+        app:layout_constraintTop_toBottomOf="@+id/dia"
+        android:autofillHints="" />
 
     <ListView
+        android:id="@+id/listID"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -83,13 +91,13 @@
         app:layout_constraintTop_toBottomOf="@+id/valor" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnsaveID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
-        android:text="Salvar"
+        android:hint="@string/salvar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/dia"
         app:layout_constraintTop_toBottomOf="@+id/quantidade_abastecida" />
