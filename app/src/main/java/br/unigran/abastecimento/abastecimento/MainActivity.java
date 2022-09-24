@@ -1,8 +1,10 @@
-package br.unigran.abastecimento;
+package br.unigran.abastecimento.abastecimento;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import br.unigran.abastecimento.R;
 
 public class MainActivity extends AppCompatActivity {
 
