@@ -6,4 +6,5 @@
     <string name="quantidade_abastecida">quantidade abastecida</string>
     <string name="quilometragem_atual">quilometragem atual</string>
     <string name="salvar_dados">SALVAR DADOS</string>
+    <string name="m_dia">MÉDIA</string>
 </resources>

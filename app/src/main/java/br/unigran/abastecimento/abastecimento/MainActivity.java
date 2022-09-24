@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,6 +21,12 @@ import br.unigran.abastecimento.bancoDados.CadastroDB;
 import br.unigran.abastecimento.bancoDados.DBHelper;
 
 public class MainActivity extends AppCompatActivity {
+
+    private EditText nmr1;
+    private EditText nmr2;
+    private TextView resultado;
+
+    public double valor1, valor2;
 
     EditText quilometragem;
     EditText quantidade_abastecida;
@@ -40,21 +47,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //banco de dados
+        nmr1 = findViewById(R.id.quilometragemID);
+        nmr2 = findViewById(R.id.quantidade_abastecidaID);
+        resultado = findViewById(R.id.textView2);
+
         db = new DBHelper(this);
-        //mapeia campos da tela
         quilometragem = findViewById(R.id.quilometragemID);
         quantidade_abastecida = findViewById(R.id.quantidade_abastecidaID);
         data = findViewById(R.id.diaID);
         valor = findViewById(R.id.valorID);
         listagem = findViewById(R.id.listID);
-        dados = new ArrayList(); //aloca lista
-        //vincula adapter
+        dados = new ArrayList();
         ArrayAdapter adapter = new ArrayAdapter(this,
                 androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, dados);
         listagem.setAdapter(adapter);
         contatoDB = new CadastroDB(db);
-        contatoDB.lista(dados);//lista incial
+        contatoDB.lista(dados);
         acoes();
     }
     private void acoes() {
@@ -121,7 +129,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Preencha os campos", Toast.LENGTH_SHORT).show();
             return false;
         } else {
+            valor1 = Double.parseDouble(nmr1.getText().toString());
+            valor2 = Double.parseDouble(nmr2.getText().toString());
             return true;
+
         }
     }
     public void salvar(View view) {
@@ -132,6 +143,8 @@ public class MainActivity extends AppCompatActivity {
 
                 contatoDB.lista(dados);
                 Toast.makeText(this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+
+
             }
             cadastro.setQuilometragem(quilometragem.getText().toString());
             cadastro.setQuantidade_abastecida(quantidade_abastecida.getText().toString());
@@ -144,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
                 contatoDB.inserir(cadastro);
                 contatoDB.lista(dados);
                 Toast.makeText(this, "Salvo com sucesso", Toast.LENGTH_SHORT).show();
+                resultado.setText(String.valueOf(valor1/valor2));
             }
             contatoDB.lista(dados);
             listagem.invalidateViews();
