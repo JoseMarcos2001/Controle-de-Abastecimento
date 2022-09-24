@@ -18,7 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "quilometragem varchar(150)," +
                 "qtd_abastecida varchar(150)," +
                 "data varchar(150)," +
-                "Valor varchar(15))");
+                "Valor varchar(150))");
     }
 
     @Override

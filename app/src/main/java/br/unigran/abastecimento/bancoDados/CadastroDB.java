@@ -47,10 +47,10 @@ public class CadastroDB {
     public void lista(List dados) {
         dados.clear();
         conexao = db.getReadableDatabase();
-        String names[] = {"id", "nome", "telefone", "datanascimento"};
+        String names[] = {"id", "quilometragem", "qtd_abastecida", "data","Valor"};
         Cursor query = conexao.query("Lista", names,
                 null, null, null,
-                null, "nome");
+                null, "quilometragem");
         while (query.moveToNext()) {
             Cadastro cadastro = new Cadastro();
             cadastro.setId(Integer.parseInt(

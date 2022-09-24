@@ -7,43 +7,43 @@
     tools:context=".abastecimento.MainActivity">
 
     <EditText
-        android:id="@+id/quilometragem"
+        android:id="@+id/quilometragemID"
         android:layout_width="388dp"
         android:layout_height="55dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/quilometragem_atual"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:minHeight="48dp"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/quantidade_abastecida"
+        android:id="@+id/quantidade_abastecidaID"
         android:layout_width="390dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/quantidade_abastecida"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:minHeight="48dp"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quilometragem"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/quilometragemID" />
 
     <EditText
-        android:id="@+id/dia"
+        android:id="@+id/diaID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -56,26 +56,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quantidade_abastecida"
+        app:layout_constraintTop_toBottomOf="@+id/quantidade_abastecidaID"
         tools:ignore="SpeakableTextPresentCheck"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/valor"
+        android:id="@+id/valorID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
         android:hint="@string/valor"
+        android:inputType="number"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dia"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/diaID" />
 
     <ListView
         android:id="@+id/listID"
@@ -88,7 +88,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/valor" />
+        app:layout_constraintTop_toBottomOf="@+id/valorID" />
 
     <Button
         android:id="@+id/btnsaveID"
@@ -97,8 +97,19 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
-        android:hint="@string/salvar"
+        android:onClick="salvar"
+        android:text = "@string/salvar_dados"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dia"
-        app:layout_constraintTop_toBottomOf="@+id/quantidade_abastecida" />
+        app:layout_constraintStart_toEndOf="@+id/diaID"
+        app:layout_constraintTop_toBottomOf="@+id/quantidade_abastecidaID" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="80dp"
+        android:text="MÉDIA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnsaveID" />
 </androidx.constraintlayout.widget.ConstraintLayout>
